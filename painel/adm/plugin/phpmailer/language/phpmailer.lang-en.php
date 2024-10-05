@@ -1,0 +1,20 @@
+<?php
+$PHPMAILER_LANG['authenticate']         = 'SMTP Error: Could not authenticate.';
+$PHPMAILER_LANG['connect_host']         = 'SMTP Error: Could not connect to the SMTP server.';
+$PHPMAILER_LANG['data_not_accepted']    = 'SMTP Error: Discarded Data.';
+$PHPMAILER_LANG['empty_message']        = 'Body of the message empty';
+$PHPMAILER_LANG['encoding']             = 'Unknown encoding: ';
+$PHPMAILER_LANG['execute']              = 'Could not run: ';
+$PHPMAILER_LANG['file_access']          = 'Unable to access the file: ';
+$PHPMAILER_LANG['file_open']            = 'File Error: Could not open the file: ';
+$PHPMAILER_LANG['from_failed']          = 'The addresses of the following senders failed: ';
+$PHPMAILER_LANG['instantiate']          = 'Unable to start an instance of the mail function.';
+$PHPMAILER_LANG['invalid_address']      = 'Not sending invalid e-mail address: ';
+$PHPMAILER_LANG['mailer_not_supported'] = ' mailer is not supported.';
+$PHPMAILER_LANG['provide_address']      = 'You must provide at least one email recipient address.';
+$PHPMAILER_LANG['recipients_failed']    = 'SMTP Error: The following recipient addresses failed: ';
+$PHPMAILER_LANG['signing']              = 'Error sign: ';
+$PHPMAILER_LANG['smtp_connect_failed']  = 'SMTP Connect() failed.';
+$PHPMAILER_LANG['smtp_error']           = 'SMTP Server Error: ';
+$PHPMAILER_LANG['variable_set']         = 'Unable to set or reset the variable: ';
+$PHPMAILER_LANG['extension_missing']    = 'Extension missing: ';
