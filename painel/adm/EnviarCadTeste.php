@@ -260,9 +260,17 @@ $cupom = (isset($_POST['cupom'])) ? trim(htmlentities($_POST['cupom'])) : '';
 	$CopiaEmail = $VerTeste[2] == "S" && !empty($VerTeste[3]) ? $VerTeste[3] : NULL;
 		
 	$EnviarEmailSend = EnviarEmail($LnUser['SMTPSecure'], $LnUser['Host'], $LnUser['Port'], $LnUser['usuario'], $LnUser['senha'], $LnUser['email'], $LnUser['exibicao'], $email, $SelecionarModelo[0], $SelecionarModelo[1], NULL, $CopiaEmail);
+	if ($celular){
+		$tel = $celular;
+	} else {
+		$tel = 244951713308;
+	}
+	$nome = "Antonio";
+	$msg = "Obrigado por criar uma conta em nosso site\nEsperamos vê-lo em breve!";
+	$EnviarWhatsApp = whatsappCad($tel, $nome, $msg);
 	//Enviar E-mail
 	
-	if(!empty($SQL) && $EnviarEmailSend == 1){
+	if(!empty($SQL) && $EnviarEmailSend == 1 && $EnviarWhatsApp == 200){
 		echo MensagemAlerta($_TRA['sucesso'], $_TRA['acsfeue'], "success", "index.php?p=inicio");
 	}
 	elseif(!empty($SQL) && $EnviarEmailSend != 1){

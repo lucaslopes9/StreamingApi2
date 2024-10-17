@@ -136,11 +136,11 @@ function IdiomaMenu(){
 	$idioma = empty($_COOKIE['idioma']) ? "br" : $_COOKIE['idioma'];
 	
 	if($idioma == "br"){
-		$menu = "<li><a href=\"index.php?lang=en\"><span class=\"flag flag-en\"></span> Inglês</a></li>
+		$menu = "<li><a href=\"index.php?lang=en\"><span class=\"flag flag-en\"></span> Inglï¿½s</a></li>
 		<li><a href=\"index.php?lang=es\"><span class=\"flag flag-es\"></span> Espanhol</a></li>
 		<li><a href=\"index.php?lang=it\"><span class=\"flag flag-it\"></span> Italiano</a></li>
-		<li><a href=\"index.php?lang=ge\"><span class=\"flag flag-ge\"></span> Alemão</a></li>
-		<li><a href=\"index.php?lang=fr\"><span class=\"flag flag-fr\"></span> Francês</a></li>";
+		<li><a href=\"index.php?lang=ge\"><span class=\"flag flag-ge\"></span> Alemï¿½o</a></li>
+		<li><a href=\"index.php?lang=fr\"><span class=\"flag flag-fr\"></span> Francï¿½s</a></li>";
 	}
 	elseif($idioma == "en"){
 		$menu = "<li><a href=\"index.php?lang=br\"><span class=\"flag flag-br\"></span> Portuguese</a></li>
@@ -151,11 +151,11 @@ Italian</a></li>
 		<li><a href=\"index.php?lang=fr\"><span class=\"flag flag-fr\"></span> French</a></li>";
 	}
 	elseif($idioma == "es"){
-		$menu = "<li><a href=\"index.php?lang=br\"><span class=\"flag flag-br\"></span> Portugués</a></li>
-		<li><a href=\"index.php?lang=en\"><span class=\"flag flag-en\"></span> Inglés</a></li>
+		$menu = "<li><a href=\"index.php?lang=br\"><span class=\"flag flag-br\"></span> Portuguï¿½s</a></li>
+		<li><a href=\"index.php?lang=en\"><span class=\"flag flag-en\"></span> Inglï¿½s</a></li>
 		<li><a href=\"index.php?lang=it\"><span class=\"flag flag-it\"></span> Italiano</a></li>
-		<li><a href=\"index.php?lang=ge\"><span class=\"flag flag-ge\"></span> Alemán</a></li>
-		<li><a href=\"index.php?lang=fr\"><span class=\"flag flag-fr\"></span> Francés</a></li>";
+		<li><a href=\"index.php?lang=ge\"><span class=\"flag flag-ge\"></span> Alemï¿½n</a></li>
+		<li><a href=\"index.php?lang=fr\"><span class=\"flag flag-fr\"></span> Francï¿½s</a></li>";
 	}
 	elseif($idioma == "it"){
 		$menu = "<li><a href=\"index.php?lang=br\"><span class=\"flag flag-br\"></span> Portoghese</a></li>
@@ -169,7 +169,7 @@ Italian</a></li>
 		<li><a href=\"index.php?lang=en\"><span class=\"flag flag-en\"></span> Englisch</a></li>
 		<li><a href=\"index.php?lang=es\"><span class=\"flag flag-es\"></span> Spanisch</a></li>
 		<li><a href=\"index.php?lang=it\"><span class=\"flag flag-it\"></span> Italienisch</a></li>
-		<li><a href=\"index.php?lang=fr\"><span class=\"flag flag-fr\"></span> Französisch</a></li>";
+		<li><a href=\"index.php?lang=fr\"><span class=\"flag flag-fr\"></span> Franzï¿½sisch</a></li>";
 	}
 	elseif($idioma == "fr"){
 		$menu = "<li><a href=\"index.php?lang=br\"><span class=\"flag flag-br\"></span> Portugais</a></li>
@@ -278,7 +278,7 @@ function ValidarUsuario($usuario, $senha){
 		return true;
 	}
 	
-	//Usuário
+	//Usuï¿½rio
 	$SQLUser = "SELECT `id`, `CadUser`, `usuario`, `senha`, `nome`, `sobrenome`, `email`, `foto`, `celular`, `data_nascimento`, `data_cadastro`, `data_premio`, `ValorCobrado`, `ValorCobradoCab`, `obs`, `MensagemInterna` FROM `usuario` WHERE `usuario` = :usuario AND `senha` = :senha LIMIT 1";
 	$SQLUser = $painel_user->prepare($SQLUser);
 	$SQLUser->bindParam(':usuario', $usuario, PDO::PARAM_STR);
@@ -2297,7 +2297,7 @@ function MensagemBox($tipo, $titulo, $mensagem){
 	include_once(Idioma(1));
 	global $_TRA;
 		
-	return "<div class=\"alert alert-".$tipo."\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\"><span aria-hidden=\"true\">×</span><span class=\"sr-only\">".$_TRA['fechar']."</span></button><strong>".$titulo."!</strong> ".$mensagem."</div>";
+	return "<div class=\"alert alert-".$tipo."\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\"><span aria-hidden=\"true\">ï¿½</span><span class=\"sr-only\">".$_TRA['fechar']."</span></button><strong>".$titulo."!</strong> ".$mensagem."</div>";
 	
 }
 
@@ -2442,10 +2442,10 @@ function EnviarEmail($Secure, $Host, $Port, $Username, $Password, $From, $Exibic
 	$mail->Sender = $From;
 	$mail->FromName = $Exibicao;
  
-	//Destinatário
+	//Destinatï¿½rio
 	$mail->AddAddress($EmailDest, $Assunto);
  	
-	//Cópia de E-mail
+	//Cï¿½pia de E-mail
 	if(!empty($CopiaEmail)){
 	$mail->AddBCC($CopiaEmail, $Assunto);
 	}
@@ -2476,7 +2476,7 @@ function EnviarEmail($Secure, $Host, $Port, $Username, $Password, $From, $Exibic
 	//Envia o e-mail
 	$enviado = $mail->Send();
  
-	//Limpa os destinatários e os anexos
+	//Limpa os destinatï¿½rios e os anexos
 	$mail->ClearAllRecipients();
 	$mail->ClearAttachments();
 	$mail->getSMTPInstance()->quit();
@@ -2509,10 +2509,10 @@ function EnviarEmailCircular($Secure, $Host, $Port, $Username, $Password, $From,
 	$mail->Sender = $From;
 	$mail->FromName = $Exibicao;
  
-	//Destinatário
+	//Destinatï¿½rio
 	$mail->AddAddress($EmailDest[0], $Assunto);
  	
-	//Cópia de E-mail
+	//Cï¿½pia de E-mail
 	if(count($EmailDest) > 0){
 		for($i=1; $i<count($EmailDest); $i++){
 			$mail->AddBCC($EmailDest[$i], $Assunto);
@@ -2530,7 +2530,7 @@ function EnviarEmailCircular($Secure, $Host, $Port, $Username, $Password, $From,
 	//Envia o e-mail
 	$enviado = $mail->Send();
  
-	//Limpa os destinatários e os anexos
+	//Limpa os destinatï¿½rios e os anexos
 	$mail->ClearAllRecipients();
 	$mail->ClearAttachments();
 	$mail->getSMTPInstance()->quit();
@@ -3046,7 +3046,7 @@ function ConvertDataPremiumMenu($data, $prepago = NULL){
 
 function ConverterDinheiro($valor){
 	$data = str_replace("R$","",$valor);
-	$data = str_replace("€","",$data);
+	$data = str_replace("ï¿½","",$data);
 	$data = str_replace("US$","",$data);
 	$data = str_replace(",",".",$data);
 	$data = str_replace(" ",".",trim($data));
@@ -3131,7 +3131,7 @@ function SelecionarModelo($CadUser, $coluna, $LoginCli, $SenhaCli, $NomeCli, $Vc
 		
 		while($LnPerfil = $SQLPerfil->fetch()){
 			
-		//Verificar se existe máscara com o valor do CSP
+		//Verificar se existe mï¿½scara com o valor do CSP
 		$UrlPerfilMask = $LnPerfil['url'];
 		$UrlNomeMask = $LnPerfil['nome'];
 		$UrlPortaMask = $LnPerfil['porta'];
@@ -3205,7 +3205,7 @@ function SelecionarModelo($CadUser, $coluna, $LoginCli, $SenhaCli, $NomeCli, $Vc
 	$SQLPreVer->execute();
 	$LnPreVer = $SQLPreVer->fetch();
 	
-	//Informações do Usuário Emissor
+	//Informaï¿½ï¿½es do Usuï¿½rio Emissor
 	$SQLUser = "SELECT nome, email FROM admin WHERE usuario = :usuario UNION SELECT nome, email FROM rev WHERE usuario = :usuario";
 	$SQLUser = $painel_user->prepare($SQLUser);
 	$SQLUser->bindParam(':usuario', $CadUser, PDO::PARAM_STR);
@@ -3404,7 +3404,7 @@ function SelecionarModeloSMS($CadUser, $coluna, $LoginCli, $SenhaCli, $NomeCli, 
 		
 		while($LnPerfil = $SQLPerfil->fetch()){
 		
-		//Verificar se existe máscara com o valor do CSP
+		//Verificar se existe mï¿½scara com o valor do CSP
 		$UrlPerfilMask = $LnPerfil['url'];
 		$UrlNomeMask = $LnPerfil['nome'];
 		$UrlPortaMask = $LnPerfil['porta'];
@@ -3478,7 +3478,7 @@ function SelecionarModeloSMS($CadUser, $coluna, $LoginCli, $SenhaCli, $NomeCli, 
 	$SQLPreVer->execute();
 	$LnPreVer = $SQLPreVer->fetch();
 	
-	//Informações do Usuário Emissor
+	//Informaï¿½ï¿½es do Usuï¿½rio Emissor
 	$SQLUser = "SELECT nome, email FROM ".SelectTabela()." WHERE usuario = :usuario";
 	$SQLUser = $painel_user->prepare($SQLUser);
 	$SQLUser->bindParam(':usuario', $CadUser, PDO::PARAM_STR);
@@ -3873,7 +3873,7 @@ function gerarNums($qtd, $minimo, $limite, $email){
             $num = rand($minimo, $limite);
             $num = str_pad($num, 1, "0", STR_PAD_LEFT);
  
-        } while($bol == TRUE); // Caso o valor seja true, será gerado um novo numero
+        } while($bol == TRUE); // Caso o valor seja true, serï¿½ gerado um novo numero
 		$numbers .= $num;
     }
 	
@@ -4917,16 +4917,16 @@ function VerRepDin(){
 		return "US$";
 	}
 	elseif($idioma == "es"){
-		return "€";
+		return "ï¿½";
 	}
 	elseif($idioma == "it"){
-		return "€";
+		return "ï¿½";
 	}
 	elseif($idioma == "ge"){
-		return "€";
+		return "ï¿½";
 	}
 	elseif($idioma == "fr"){
-		return "€";
+		return "ï¿½";
 	}
 	else{
 		return "R$";
@@ -5253,7 +5253,7 @@ function VerificarTeste($comprador){
 		$celular = $Ln['celular'];
 		$data_cadastro = $Ln['data_cadastro'];
 		
-		//Cadastra na Tabela Usuário
+		//Cadastra na Tabela Usuï¿½rio
 		$SQL = "INSERT INTO usuario (
 				CadUser,
 				nome,
@@ -5313,7 +5313,7 @@ function AtualizarRetorno($CadUser, $comprador, $dias, $perfil, $conexao, $PrePa
 				$DataAtualizar = time() + (3600 * 24 * $dias);
 			}
 		
-		//Atualizar Usuário
+		//Atualizar Usuï¿½rio
 		$SQL = "UPDATE usuario SET
 			conexao = :conexao,
 			perfil = :perfil,
@@ -5827,7 +5827,7 @@ function ModeloCircularExibir($mensagem){
 	
 	$CadUser = InfoUser(2);
 	
-	//Informações do Usuário Emissor
+	//Informaï¿½ï¿½es do Usuï¿½rio Emissor
 	$SQLUser = "SELECT nome, email FROM admin WHERE usuario = :usuario UNION ALL SELECT nome, email FROM rev WHERE usuario = :usuario";
 	$SQLUser = $painel_user->prepare($SQLUser);
 	$SQLUser->bindParam(':usuario', $CadUser, PDO::PARAM_STR);
@@ -5862,6 +5862,48 @@ function VerificarEmailTeste($CadUser, $email){
 	$Total = count($SQL->fetchAll());
 	
 	return $Total;
+}
+
+function whatsappCad($tel, $nome, $msg){
+	$nome	= htmlspecialchars($nome, ENT_QUOTES, 'UTF-8');
+	$msg	= htmlspecialchars($msg, ENT_QUOTES, 'UTF-8');
+
+	$msg = "SaudaÃ§Ãµes " . $nome . "\n" . $msg;
+
+	$data = [
+		'receiver'  => $tel,
+		'msgtext'   => $msg,
+		'sender'    => '244929782402',
+		'token'     => 'm35wVErlR8z8M5LMyHmA',
+	];
+
+	$curl = curl_init();
+
+	curl_setopt_array($curl, array(
+		CURLOPT_URL => 'https://api.dw-api.com/send',
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_ENCODING => '',
+		CURLOPT_MAXREDIRS => 10,
+		CURLOPT_TIMEOUT => 0,
+		CURLOPT_FOLLOWLOCATION => true,
+		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		CURLOPT_CUSTOMREQUEST => 'POST',
+		CURLOPT_POSTFIELDS => json_encode($data),
+		CURLOPT_HTTPHEADER => array(
+			'Content-Type: application/json'
+		),
+	));
+
+	$response = curl_exec($curl);
+
+	curl_close($curl);
+
+	if ($response)
+	{
+		return (200);
+	} else {
+		return (400);
+	}
 }
 
 ?>
